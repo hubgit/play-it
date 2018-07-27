@@ -5,7 +5,8 @@ export default q => {
   params.append('q', `${q} more:pagemap:metatags-og_type:album OR more:pagemap:metatags-og_type:music.album`)
   params.append('num', 3)
 
-  const url = `https://www.googleapis.com/customsearch/v1?${params.toString()}`
+  const url = new URL('https://www.googleapis.com/customsearch/v1')
+  url.search = params
 
   return fetch(url).then(res => res.json()).then(data => data.items)
 }
