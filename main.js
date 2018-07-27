@@ -3,7 +3,8 @@ import search from './search.js'
 import template from './template.js'
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const q = window.location.searchParams.get('q')
+  const url = new URL(window.location)
+  const q = url.searchParams.get('q')
 
   if (q) {
     document.querySelector('#input').q.value = q
