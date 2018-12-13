@@ -35,7 +35,7 @@ export default item => `
       
       ${item.embed ? `
           <div itemscope itemtype="http://schema.org/AudioObject">
-              <object itemprop="embedUrl" data="${item.embed.data}" width="${item.embed.width}" height="${item.embed.height}"></object>
+              <object itemprop="embedUrl" data="${item.embed.data}" width="${item.embed.width}" height="${item.embed.height}" allow="encrypted-media"></object>
           </div>
       ` : ''}
     </div>
