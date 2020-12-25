@@ -127,9 +127,11 @@ article .spoiler:hover {
   color: #777 !important;
 }
 
+article iframe[itemprop="embedUrl"],
 article object[itemprop="embedUrl"] {
   width: 100%;
   min-height: 500px;
+  border: none;
 }
 
 article [itemprop=byArtist] {
