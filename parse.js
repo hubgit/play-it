@@ -162,7 +162,7 @@ const parseAudio = pagemap => {
   if (pagemap.metatags && pagemap.metatags[0]['og:url']) {
     if (pagemap.metatags[0]['og:url'].match(/^https:\/\/open.spotify.com\//)) {
       return {
-        data: pagemap.metatags[0]['og:url'].replace(/open.spotify.com/, 'embed.spotify.com'),
+        data: pagemap.metatags[0]['og:url'].replace(/open.spotify.com/, 'open.spotify.com/embed'),
         height: '80px'
       }
     }
