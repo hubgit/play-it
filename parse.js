@@ -160,10 +160,17 @@ const parseAudio = pagemap => {
   }
 
   if (pagemap.metatags && pagemap.metatags[0]['og:url']) {
-    if (pagemap.metatags[0]['og:url'].match(/^https:\/\/open.spotify.com\//)) {
+    if (pagemap.metatags[0]['og:url'].startsWith('https://open.spotify.com/')) {
       return {
-        data: pagemap.metatags[0]['og:url'].replace(/open.spotify.com/, 'open.spotify.com/embed'),
+        data: pagemap.metatags[0]['og:url'].replace('open.spotify.com', 'open.spotify.com/embed'),
         height: '80px'
+      }
+    }
+    
+    if (pagemap.metatags[0]['og:url'].startsWith('https://music.apple.com/')) {
+      return {
+        data: pagemap.metatags[0]['og:url'].replace('music.apple.com', 'embed.music.apple.com'),
+        height: '450px'
       }
     }
   }
